@@ -23,6 +23,7 @@
 <div>
     <table>
         <tr>
+            <th></th>
             <th>NAME</th>
             <th>EMAIL</th>
             <th>COMPANY</th>
@@ -31,15 +32,22 @@
         </tr>
         <%for (Employee employee : employees) { %>
             <tr>
+                <td><% if (employee.getPictureName() != null) {%>
+                    <img src="/downloadImg?img=<%=employee.getPictureName()%>" width="30">
+                    <%} else {%>
+                    NO PICTURE
+                    <% } %>
+                </td>
                 <td><%=employee.getName()%></td>
                 <td><%=employee.getEmail()%></td>
                 <td><%=employee.getCompany().getName()%></td>
-                <td><a href="deleteEmployee?id=<%=employee.getId()%>">DELETE</a></td>
-                <td><a href="updateEmployee?id=<%=employee.getId()%>">UPDATE</a></td>
+                <td><a href="/deleteEmployee?id=<%=employee.getId()%>">DELETE</a></td>
+                <td><a href="/updateEmployee?id=<%=employee.getId()%>">UPDATE</a></td>
             </tr>
         <%}%>
     </table>
 </div>
-<a href="addEmployee"><h3>ADD EMPLOYEE</h3></a>
+<a href="/addEmployee"><h3>ADD EMPLOYEE</h3></a>
+<a href="/home">BACK</a>
 </body>
 </html>

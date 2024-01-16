@@ -1,23 +1,23 @@
 package am.itspace.companyemployeeee.servlet;
 
-import am.itspace.companyemployeeee.manager.EmployeeManager;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/deleteEmployee")
-public class DeleteEmployeeServlet extends HttpServlet {
-    private EmployeeManager employeeManager = new EmployeeManager();
+@WebServlet(urlPatterns = "/home")
+public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
-
-        employeeManager.delete(id);
-        resp.sendRedirect("/employee");
+        HttpSession session = req.getSession();
+        if (session.getAttribute("user") == null) {
+            resp.sendRedirect("/");
+        } else {
+            req.getRequestDispatcher("/WEB-INF/home.jsp").forward(req, resp);
+        }
     }
 }

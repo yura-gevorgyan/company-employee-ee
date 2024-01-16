@@ -22,6 +22,6 @@ public class DeleteCompanyServlet extends HttpServlet {
 
         employeeManager.deleteByCompany(id);
         companyManager.delete(id);
-        resp.sendRedirect("company");
+        resp.sendRedirect("/company");
     }
 }

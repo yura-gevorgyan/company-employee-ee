@@ -34,11 +34,12 @@
             </td>
             <td><%=company.getAddress()%>
             </td>
-            <td><a href="deleteCompany?id=<%=company.getId()%>">DELETE</a></td>
+            <td><a href="/deleteCompany?id=<%=company.getId()%>">DELETE</a></td>
         </tr>
         <%}%>
     </table>
 </div>
-<a href="addCompany"><h3>ADD COMPANY</h3></a>
+<a href="/addCompany"><h3>ADD COMPANY</h3></a>
+<a href="/home">BACK</a>
 </body>
 </html>

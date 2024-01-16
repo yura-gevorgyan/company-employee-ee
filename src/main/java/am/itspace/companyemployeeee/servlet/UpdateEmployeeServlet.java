@@ -32,7 +32,7 @@ public class UpdateEmployeeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
+        int id = Integer.parseInt(req.getParameter("employeeId"));
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         int companyId = Integer.parseInt(req.getParameter("companyId"));
@@ -45,6 +45,6 @@ public class UpdateEmployeeServlet extends HttpServlet {
                 .company(companyById)
                 .build());
 
-        resp.sendRedirect("employee");
+        resp.sendRedirect("/employee");
     }
 }

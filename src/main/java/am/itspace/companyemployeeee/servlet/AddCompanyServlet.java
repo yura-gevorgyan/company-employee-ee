@@ -29,6 +29,6 @@ public class AddCompanyServlet extends HttpServlet {
                 .address(address)
                 .build());
 
-        resp.sendRedirect("company");
+        resp.sendRedirect("/company");
     }
 }

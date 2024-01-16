@@ -13,7 +13,7 @@
     <title>ADD EMPLOYEE</title>
 </head>
 <body>
-<form method="post" action="addEmployee">
+<form method="post" action="/addEmployee" enctype="multipart/form-data">
     NAME: <input type="text" name="name">
     <br>
     <br>
@@ -26,7 +26,8 @@
         <option value="<%=company.getId()%>"><%=company.getName()%>
         </option>
         <%}%>
-    </select>
+    </select><br>
+    <input type="file" name="picture">
     <input type="submit" value="ADD">
 </form>
 </body>

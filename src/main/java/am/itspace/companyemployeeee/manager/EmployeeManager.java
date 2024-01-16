@@ -24,6 +24,7 @@ public class EmployeeManager {
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 int companyId = resultSet.getInt("company_id");
+                String pictureName = resultSet.getString("picture_name");
 
                 Company company = companyManager.getCompanyById(companyId);
                 employees.add(Employee.builder()
@@ -31,6 +32,7 @@ public class EmployeeManager {
                         .name(name)
                         .email(email)
                         .company(company)
+                        .pictureName(pictureName)
                         .build());
             }
         } catch (SQLException e) {
@@ -40,12 +42,13 @@ public class EmployeeManager {
     }
 
     public void add(Employee employee) {
-        String sql = "INSERT INTO employee(name,email,company_id) VALUES (?,?,?)";
+        String sql = "INSERT INTO employee(name,email,company_id,picture_name) VALUES (?,?,?,?)";
 
         try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, employee.getName());
             ps.setString(2, employee.getEmail());
             ps.setInt(3, employee.getCompany().getId());
+            ps.setString(4, employee.getPictureName());
             ps.executeUpdate();
 
             ResultSet generatedKeys = ps.getGeneratedKeys();
@@ -88,6 +91,7 @@ public class EmployeeManager {
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 int companyId = resultSet.getInt("company_id");
+                String pictureName = resultSet.getString("picture_name");
 
                 Company companyById = companyManager.getCompanyById(companyId);
                 return Employee.builder()
@@ -95,6 +99,7 @@ public class EmployeeManager {
                         .name(name)
                         .email(email)
                         .company(companyById)
+                        .pictureName(pictureName)
                         .build();
             }
         } catch (SQLException e) {

@@ -11,7 +11,7 @@
     <title>ADD COMPANY</title>
 </head>
 <body>
-<form method="post" action="addCompany">
+<form method="post" action="/addCompany">
     NAME: <input type="text" name="name">
     <br>
     <br>

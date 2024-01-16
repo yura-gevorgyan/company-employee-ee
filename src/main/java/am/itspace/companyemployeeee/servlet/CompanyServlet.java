@@ -18,9 +18,13 @@ public class CompanyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getSession().getAttribute("user") == null) {
+            resp.sendRedirect("/");
+        } else {
         List<Company> companies = companyManager.getCompanies();
 
         req.setAttribute("companies", companies);
         req.getRequestDispatcher("/WEB-INF/company.jsp").forward(req, resp);
+        }
     }
 }
