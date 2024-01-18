@@ -15,7 +15,7 @@
     <title>Update</title>
 </head>
 <body>
-<form method="post" action="/updateEmployee">
+<form method="post" action="/employee/update">
     <input type="hidden" name="employeeId" value="<%=employee.getId()%>">
     NEW NAME:<input type="text" name="name" value="<%=employee.getName()%>">
     <br>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/deleteCompany")
+@WebServlet(urlPatterns = "/company/delete")
 public class DeleteCompanyServlet extends HttpServlet {
 
     private CompanyManager companyManager = new CompanyManager();

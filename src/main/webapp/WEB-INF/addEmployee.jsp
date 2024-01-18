@@ -13,7 +13,7 @@
     <title>ADD EMPLOYEE</title>
 </head>
 <body>
-<form method="post" action="/addEmployee" enctype="multipart/form-data">
+<form method="post" action="/employee/add" enctype="multipart/form-data">
     NAME: <input type="text" name="name">
     <br>
     <br>

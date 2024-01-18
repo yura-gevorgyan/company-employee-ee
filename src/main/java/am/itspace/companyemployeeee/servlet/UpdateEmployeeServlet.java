@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/updateEmployee")
+@WebServlet(urlPatterns = "/employee/update")
 public class UpdateEmployeeServlet extends HttpServlet {
     private EmployeeManager employeeManager = new EmployeeManager();
     private CompanyManager companyManager = new CompanyManager();

@@ -13,11 +13,6 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        if (session.getAttribute("user") == null) {
-            resp.sendRedirect("/");
-        } else {
             req.getRequestDispatcher("/WEB-INF/home.jsp").forward(req, resp);
-        }
     }
 }

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/addCompany")
+@WebServlet(urlPatterns = "/company/add")
 public class AddCompanyServlet extends HttpServlet {
 
     private CompanyManager companyManager = new CompanyManager();
